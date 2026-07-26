@@ -1,9 +1,15 @@
 # [프로젝트 1] 노코드 자동화 도구 비교 분석 보고서
 
-경남 코디세이 AI네이티브 과정 - 노코드 자동화 실습 과제
 
 ## 1. 프로젝트 개요
-본 프로젝트는 구글 스프레드시트에 입력된 고객 문의 데이터의 유형(긴급/일반)을 판별하여, 각기 다른 이메일 응답을 자동으로 발송하는 워크플로우를 구축하고, 이를 서로 다른 두 가지 자동화 도구(Make, Zapier)로 구현하여 비교 분석하는 것을 목적으로 합니다.
+구글 스프레드시트에 입력된 고객 문의 데이터의 유형(긴급/일반)을 판별하여, 각기 다른 이메일 응답을 자동으로 발송하는 워크플로우를 구축하고, 이를 서로 다른 두 가지 자동화 도구(Make, Zapier)로 구현하여 비교 분석하는 것을 목적으로 합니다.
+
+<img width="832" height="864" alt="google1" src="https://github.com/user-attachments/assets/d84d9451-23b5-4c34-886d-08737fffe93c" />
+<br><br>
+
+
+<img width="762" height="136" alt="google2" src="https://github.com/user-attachments/assets/782a13ac-5b73-450a-8bd7-6590fe63b7d6" />
+
 
 ### 워크플로우 구조
 - **Trigger**: Google Sheets - 새로운 행(Row)이 추가될 때 실행
@@ -16,13 +22,15 @@
 
 ## 2. 도구별 구현 및 실행 결과
 
-### ① Make (구 Integromat)
+### ① Make
 - **워크플로우 구성**: 
-  - Google Sheets 모듈과 Gmail 모듈 사이에 Router를 배치하여 조건 분기 설정
-  - ![Make 워크플로우 캡처](이미지_경로_또는_캡처본_업로드)
+  - Google Sheets 모듈과 Slack,Gmail 모듈 사이에 Router를 배치하여 조건 분기 설정
+  <img width="1050" height="613" alt="make1" src="https://github.com/user-attachments/assets/394978e6-28f9-4674-9e2d-ef3eee59ed48" />
+
 - **실행 결과 (Log)**:
   - '긴급' 데이터 입력 시 상단 경로 활성화, '일반' 데이터 입력 시 하단 경로 활성화 확인
   - ![Make 실행결과 캡처](이미지_경로_또는_캡처본_업로드)
+![Uploading google1.png…]()
 
 ### ② Zapier
 - **워크플로우 구성**: 
