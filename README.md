@@ -29,8 +29,12 @@
 
 - **실행 결과 (Log)**:
   - '긴급' 데이터 입력 시 상단 경로 활성화, '일반' 데이터 입력 시 하단 경로 활성화 확인
-  - ![Make 실행결과 캡처](이미지_경로_또는_캡처본_업로드)
-![Uploading google1.png…]()
+ <img width="1484" height="783" alt="make3" src="https://github.com/user-attachments/assets/d1617a4b-298e-4e8c-8b73-febc3fb4c9ff" />
+
+ <br>
+
+<img width="1458" height="855" alt="make4" src="https://github.com/user-attachments/assets/4017c58c-467c-47e6-83c0-41b3e0b5efb9" />
+
 
 ### ② Zapier
 - **워크플로우 구성**: 
