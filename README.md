@@ -90,5 +90,54 @@
 * **Make를 추천하는 경우:** "데이터를 조건에 따라 나누고 싶고, 가성비 있게 대량의 자동화를 돌리고 싶다!" 할 때 사용.
 
 ---
-**작성자:** [본인 성함]  
-**완료일:** 202X년 X월 X일
+
+
+# [프로젝트 2] 자유 주제 자동화 설계 및 구현
+
+
+## 1.자동화할 반복 업무 정의 <br>
+* **업무명:** 나만의 AI 뉴스 비서: 매일 아침 핵심 요약 및 자동 배달 <br>
+* **기존 업무 방식:** 매일 아침 업무 시작 전, IT 뉴스 사이트나 블로그 5~6곳을 직접 방문해 새로운 기사가 있는지 확인합니다.<br>
+중요한 기사는 내용을 읽고 메모장에 요약한 뒤, 팀원들과 공유하기 위해 슬랙에 올리거나 나중에 보려고 노션에 복사해 둡니다. <br>
+
+  
+<br>
+
+## 2.자동화 도구 선정 및 선정 이유 <br>
+* **선정 도구:** Make (메이크)<br>
+* **선정 이유:** <br>
+**- 정확하고 편한 연결:** <br>
+뉴스(RSS)를 가져와서 AI(OpenAI)에게 전달하고, 그 결과를 다시 슬랙이나 노션으로 보내는 과정이 마치 퍼즐 맞추듯 시각적으로 연결되어 있어 관리가 쉬움.<br>
+**- 다양한 저장소 지원:** Notion, Slack, Google Sheets 등 다양한 앱과의 연동성이 뛰어나 데이터베이스화하기 좋음.<br>
+**- 필터링 기능:** 모든 뉴스를 다 가져오는 게 아니라, AI가 판단했을 때 정말 중요한 뉴스만 골라서 알림을 주는 '조건문(Filter)' 설정이 매우 강력합니다.
+
+<br>
+
+## 3.워크플로우 설계 (Architecture) <br>
+
+**[수집 → 분석 → 필터링 → 배포/저장]**의 4단계로 구성됩니다. <br>
+
+* **Trigger (RSS):** 지정된 뉴스 사이트에서 새로운 기사 감지. <br>
+* **Analysis (Gemini):** <br>
+프롬프트 엔지니어링을 통해 3줄 요약 및 1~10점 사이의 중요도 점수 생성. <br>
+* **Router (Condition):** <br>
+Path A (High Priority): 중요도 8점 이상인 경우 Slack으로 즉시 전송. <br>
+Path B (Archive): 모든 기사를 Notion 데이터베이스에 기록.
+<br>
+
+<img width="1160" height="678" alt="make6" src="https://github.com/user-attachments/assets/ac1ea91f-f537-41bd-a63a-fa963f5bffe2" />
+
+<br>
+
+- **실행 결과 (Log)**: <br>
+  - notion과 slack에 입력되는지 확인
+  
+
+<img width="1267" height="298" alt="notion1" src="https://github.com/user-attachments/assets/0f37c3fd-7f9e-42ad-af8a-3a186d2a685f" />
+
+<br>
+
+<img width="1233" height="713" alt="slack1" src="https://github.com/user-attachments/assets/02c873de-f3cb-4ab6-b418-197754e9364b" />
+
+
+
